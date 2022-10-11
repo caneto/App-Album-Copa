@@ -1,3 +1,4 @@
+import 'package:appalbumcopa/app/core/styles/colors_app.dart';
 import 'package:flutter/material.dart';
 
 class TextStyles {
@@ -48,6 +49,10 @@ class TextStyles {
 
   TextStyle get textSecundaryFontExtraBold => TextStyle(
       fontWeight: FontWeight.w800, fontFamily: primaryFont
+  );
+
+  TextStyle get labelTextField => textSecundaryFontRegular.copyWith(
+    color: ColorsApp.instance.greyDark
   );
 }
 

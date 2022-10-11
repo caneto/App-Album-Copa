@@ -59,3 +59,7 @@ class ButtonStyles {
   );
 
 }
+
+extension ButtonStyleExtensions on BuildContext{
+  ButtonStyles get buttonStyles => ButtonStyles.instance;
+}
