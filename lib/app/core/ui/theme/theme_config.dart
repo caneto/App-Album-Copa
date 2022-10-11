@@ -1,6 +1,6 @@
 
-import 'package:appalbumcopa/app/core/styles/colors_app.dart';
-import 'package:appalbumcopa/app/core/styles/text_styles.dart';
+import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
+import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ThemeConfig {

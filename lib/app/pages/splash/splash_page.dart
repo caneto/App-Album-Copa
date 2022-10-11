@@ -1,6 +1,6 @@
-import 'package:appalbumcopa/app/core/styles/button_styles.dart';
-import 'package:appalbumcopa/app/core/styles/colors_app.dart';
-import 'package:appalbumcopa/app/core/styles/text_styles.dart';
+import 'package:appalbumcopa/app/core/ui/styles/button_styles.dart';
+import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
+import 'package:appalbumcopa/app/core/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -15,16 +15,22 @@ class SplashPage extends StatelessWidget {
      body: Center(
        child: Column(
          children: [
-           ElevatedButton(
+           Button(
              onPressed: () {},
-             style: ButtonStyles.instance.primaryButton,
-             child: Text('Salvar'),
+             style: ButtonStyles.instance.yellowButton,
+             labelStyle: TextStyles.instance.textPrimaryFontBold,
+             label: 'Salvar',
            ),
-           OutlinedButton(
+           Button.primary(
              onPressed: () {},
-             style: ButtonStyles.instance.primaryOutlineButton,
-             child: Text('Salvar'),
+             label: 'Salvar',
            ),
+           Button.primary(
+             widht: MediaQuery.of(context).size.width * .9,
+             height: 30,
+             onPressed: () {},
+             label: 'Salvar',
+           )
          ],
        ),
      ),
