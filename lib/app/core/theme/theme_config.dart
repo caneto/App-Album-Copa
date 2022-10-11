@@ -9,6 +9,9 @@ class ThemeConfig {
       backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
+      iconTheme: IconThemeData(
+        color: Colors.black
+      ),
       titleTextStyle: TextStyle(
         color: Colors.black,
       )
