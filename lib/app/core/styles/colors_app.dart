@@ -15,3 +15,7 @@ class ColorsApp {
   Color get grey => const Color(0xFFCCCCCC);
   Color get greyDark => const Color(0xFF999999);
 }
+
+extension ColorsAppExtensions on BuildContext {
+  ColorsApp get colors => ColorsApp.instance;
+}
