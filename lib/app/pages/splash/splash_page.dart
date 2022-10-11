@@ -56,7 +56,7 @@ class _SplashPageState extends State<SplashPage>
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 20),
+                padding: const  EdgeInsets.only(bottom: 20),
                 child: Image.asset('assets/images/bandeiras.png'),
               ),
             ),
