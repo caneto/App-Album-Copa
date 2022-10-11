@@ -1,3 +1,4 @@
+import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -16,9 +17,18 @@ class RoundedButton extends StatelessWidget {
       elevation: 3,
       shadowColor: Colors.grey.withOpacity(0.2),
       shape: const CircleBorder(),
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Icon(icon),
+      child: DecoratedBox(
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+        ),
+        child: IconButton(
+          onPressed: onPressed,
+          icon: Icon(
+            icon,
+            color: context.colors.greyDark,
+          ),
+        ),
       ),
     );
   }
