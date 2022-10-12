@@ -1,4 +1,5 @@
 import 'package:appalbumcopa/app/core/rest/custom_dio.dart';
+import 'package:appalbumcopa/app/core/ui/theme/theme_config.dart';
 import 'package:appalbumcopa/app/pages/auth/login/login_page.dart';
 import 'package:appalbumcopa/app/pages/home/home_page.dart';
 import 'package:appalbumcopa/app/pages/splash/splash_page.dart';
@@ -21,6 +22,7 @@ class AppAlbumCopa extends StatelessWidget {
       child: MaterialApp(
         title: 'Fifa World Cup Album',
         debugShowCheckedModeBanner: false,
+        theme: ThemeConfig.theme,
         routes: {
           '/': (_) => const SplashRoute(),
           '/auth/login': (_) => const LoginHome(),
