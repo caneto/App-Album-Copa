@@ -10,7 +10,7 @@ class CustomDio extends DioForNative {
     receiveTimeout: 60000,
   )){
     interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
-  };
+  }
 
   CustomDio auth() {
     return this;
