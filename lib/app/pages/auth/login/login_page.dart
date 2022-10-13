@@ -2,16 +2,17 @@ import 'package:appalbumcopa/app/core/ui/styles/button_styles.dart';
 import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
 import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
 import 'package:appalbumcopa/app/core/ui/widgets/button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class LoginHome extends StatefulWidget {
-  const LoginHome({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginHome> createState() => _LoginHomeState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginHomeState extends State<LoginHome> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,11 +91,15 @@ class _LoginHomeState extends State<LoginHome> {
                       style: context.textStyles.textSecundaryFontMedium
                             .copyWith(color: Colors.white),
                       TextSpan(
-                        text: 'Não possui uma conta?',
+                        text: 'Não possui uma conta? ',
                         children: [
-                           TextSpan(text: 'Cadastre-se',style: context.textStyles.textSecundaryFontMedium.copyWith(
-                             color: context.colors.yellow,
-                           ),
+                           TextSpan(
+                             text: 'Cadastre-se',style:
+                             context.textStyles.textSecundaryFontMedium
+                               .copyWith(color: context.colors.yellow),
+                             recognizer: TapGestureRecognizer()
+                               ..onTap = () => Navigator.of(context)
+                                   .pushNamed('/auth/register'),
                           )
                       ]),
                       )
