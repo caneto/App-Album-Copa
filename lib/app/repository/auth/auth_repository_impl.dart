@@ -35,6 +35,7 @@ class AuthRepositoryImpl implements AuthRepository {
       if(e.response?.statusCode == 401) {
         throw UnathorizedExeption();
       }
+
       throw RepositoryException(message: 'Erro ao realizar login');
     }
   }
