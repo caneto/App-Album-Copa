@@ -1,5 +1,7 @@
 
+import 'package:appalbumcopa/app/core/ui/global/global_context.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_getit/flutter_getit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -13,5 +15,13 @@ class AuthInterceptor extends Interceptor {
     handler.next(options);  //! Atenção !///
   }
 
+  @override
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+    if(err.response?.statusCode == 401) {
+      Injector.get<GlobalContext>().loginExpire();
+    } else {
+      handler.next(err);
+    }
+  }
 
 }

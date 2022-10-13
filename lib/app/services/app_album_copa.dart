@@ -1,4 +1,6 @@
 import 'package:appalbumcopa/app/core/rest/custom_dio.dart';
+import 'package:appalbumcopa/app/core/ui/global/global_context.dart';
+import 'package:appalbumcopa/app/core/ui/global/global_context_impl.dart';
 import 'package:appalbumcopa/app/core/ui/theme/theme_config.dart';
 import 'package:appalbumcopa/app/pages/auth/login/login_page.dart';
 import 'package:appalbumcopa/app/pages/auth/login/login_route.dart';
@@ -11,18 +13,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 
 class AppAlbumCopa extends StatelessWidget {
-  const AppAlbumCopa({Key? key}) : super(key: key);
+  AppAlbumCopa({Key? key}) : super(key: key);
+
+  final navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
     return FlutterGetItApplicationBinding(
       bindingsBuilder: () => [
         Bind.lazySingleton<CustomDio>((i) => CustomDio()),
-        Bind.lazySingleton<AuthRepository>((i) => AuthRepositoryImpl(dio: i())) // o que é isso???
+        Bind.lazySingleton<AuthRepository>((i) => AuthRepositoryImpl(dio: i())),
+        Bind.lazySingleton<GlobalContext>((i) => GlobalContextImpl(navigatorKey: navigatorKey, authRepository: i())) // o que é isso???
       ],
       child: MaterialApp(
         title: 'Fifa World Cup Album',
         debugShowCheckedModeBanner: false,
+        navigatorKey: navigatorKey,
         theme: ThemeConfig.theme,
         routes: {
           '/': (_) => const SplashRoute(),
