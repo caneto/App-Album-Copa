@@ -2,7 +2,7 @@
 import 'package:appalbumcopa/app/core/ui/helpers/loader.dart';
 import 'package:appalbumcopa/app/core/ui/helpers/messages.dart';
 import 'package:appalbumcopa/app/pages/auth/register/register_page.dart';
-import 'package:flutter/widgets.dart';;
+import 'package:flutter/widgets.dart';
 
 import './register_view.dart';
 
