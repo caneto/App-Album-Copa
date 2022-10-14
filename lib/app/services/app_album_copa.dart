@@ -23,7 +23,10 @@ class AppAlbumCopa extends StatelessWidget {
       bindingsBuilder: () => [
         Bind.lazySingleton<CustomDio>((i) => CustomDio()),
         Bind.lazySingleton<AuthRepository>((i) => AuthRepositoryImpl(dio: i())),
-        Bind.lazySingleton<GlobalContext>((i) => GlobalContextImpl(navigatorKey: navigatorKey, authRepository: i())) // o que é isso???
+        Bind.lazySingleton<GlobalContext>(
+          (i) => GlobalContextImpl(
+              navigatorKey: navigatorKey, authRepository: i()),
+        ) // o que é isso???
       ],
       child: MaterialApp(
         title: 'Fifa World Cup Album',
