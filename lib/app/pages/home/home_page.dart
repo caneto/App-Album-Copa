@@ -3,6 +3,7 @@ import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
 import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
 import 'package:appalbumcopa/app/core/ui/widgets/button.dart';
 import 'package:appalbumcopa/app/pages/home/widgets/status_tile.dart';
+import 'package:appalbumcopa/app/pages/home/widgets/sticker_percent_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          const Text('Percentual !!!!'),
+                          const StickerPercentWidget(percent: 60,),
                           const SizedBox(
                              height: 20,
                           ),

@@ -64,11 +64,14 @@ class TextStyles {
     color: Colors.white
   );
 
-
-
   TextStyle get titleBlack => textPrimaryFontBold.copyWith(
       fontSize: 22,
       color: Colors.black
+  );
+
+  TextStyle get titlePrimaryColor => textPrimaryFontBold.copyWith(
+      fontSize: 22,
+      color: ColorsApp.instance.primary
   );
 }
 
