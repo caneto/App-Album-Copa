@@ -1,5 +1,7 @@
 
 import 'package:appalbumcopa/app/pages/home/home_page.dart';
+import 'package:appalbumcopa/app/pages/home/presenter/home_presenter.dart';
+import 'package:appalbumcopa/app/pages/home/presenter/home_presenter_impl.dart';
 import 'package:appalbumcopa/app/repository/user/user_repository.dart';
 import 'package:appalbumcopa/app/repository/user/user_repository_impl.dart';
 import 'package:flutter/widgets.dart';
@@ -10,10 +12,11 @@ class HomeRoute extends FlutterGetItPageRoute {
 
   @override
   List<Bind<Object>> get bindings => [
-    Bind.lazySingleton<UserRepository>((i) => UserRepositoryImpl(dio: i()))
+    Bind.lazySingleton<UserRepository>((i) => UserRepositoryImpl(dio: i())),
+    Bind.lazySingleton<HomePresenter>((i) => HomePresenterImpl(userRepository: i()))
   ];
 
   @override
-  WidgetBuilder get page => (context) => HomePage();
+  WidgetBuilder get page => (context) => HomePage(presenter: context.get());
   
 }

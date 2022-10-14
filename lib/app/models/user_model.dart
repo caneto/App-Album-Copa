@@ -10,18 +10,25 @@ class UserModel {
   //total de figurinhas do album
   final int totalAlbum;
 
+  //total de Stickers
+  final int totalStickers;
+
   //total de figurinhas repetidas
   final int totalDuplicates;
 
   // Total de figurinhas que faltam para completar seu album
   final int totalComplete;
 
+  //Percentual completado
   final int totalCompletePercent;
+
+
   const UserModel({
     required this.id,
     required this.name,
     required this.email,
     required this.totalAlbum,
+    required this.totalStickers,
     required this.totalDuplicates,
     required this.totalComplete,
     required this.totalCompletePercent,
@@ -33,6 +40,7 @@ class UserModel {
       'name': name,
       'email': email,
       'totalAlbum': totalAlbum,
+      'totalStickers': totalStickers,
       'totalDuplicates': totalDuplicates,
       'totalComplete': totalComplete,
       'totalCompletePercent': totalCompletePercent,
@@ -45,6 +53,7 @@ class UserModel {
       name: (map["name"] ?? '') as String,
       email: (map["email"] ?? '') as String,
       totalAlbum: (map["total_album"] ?? 0) as int,
+      totalStickers: (map["total_stickers"] ?? 0) as int, 
       totalDuplicates: (map["total_duplicates"] ?? 0) as int,
       totalComplete: (map["total_complete"] ?? 0) as int,
       totalCompletePercent: (map["total_complete_percent"] ?? 0) as int,
