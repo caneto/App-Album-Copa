@@ -31,5 +31,5 @@ class LoginPresenterImpl implements LoginPresenter {
 
   @override
   set view(LoginView view) => _view = view;
-
+ 
 }

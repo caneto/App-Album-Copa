@@ -7,7 +7,6 @@ import 'widgets/sticker_status_filter.dart';
 import 'package:flutter/material.dart';
 
 class MyStickersPage extends StatefulWidget {
-
   final MyStieckersPresenter presenter;
 
   const MyStickersPage({super.key, required this.presenter});
@@ -31,7 +30,7 @@ class _MyStickersPageState extends MyStickersViewImpl {
                 StickerStatusFilter(
                   filterSelected: statusFilter,
                 ),
-                const StickerGroupFilter(),
+                StickerGroupFilter(countries: countries),
               ],
             ),
           ),
@@ -39,7 +38,10 @@ class _MyStickersPageState extends MyStickersViewImpl {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final group = album[index];
-                return StickerGroup(group: group);
+                return StickerGroup(
+                  group: group,
+                  statusFilter: statusFilter,
+                );
               },
               childCount: album.length,
             ),

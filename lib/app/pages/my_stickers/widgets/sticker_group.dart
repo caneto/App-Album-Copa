@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 
 class StickerGroup extends StatelessWidget {
   final GroupsStickers group;
+  final String statusFilter;
 
-  const StickerGroup({Key? key, required this.group}) : super(key: key);
+  const StickerGroup({Key? key, required this.group, required this.statusFilter}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +56,28 @@ class StickerGroup extends StatelessWidget {
                   .where((sticker) => sticker.sttckerNumber == stickerNumber);
               final sticker = stickerList.isNotEmpty ? stickerList.first : null;
               
-              return Sticker(
+              final stickerWidget = Sticker(
                 stickerNumber: stickerNumber,
                 sticker: sticker,
                 countryName: group.countryName,
                 countryCode: group.countryCode
               );
+
+              if(statusFilter == 'all') {
+                return stickerWidget;
+              } else if(statusFilter == 'missing') {
+                if(sticker == null) {
+                  return stickerWidget;
+                }
+              } else if(statusFilter == 'repeater') {
+                if(sticker != null && sticker.duplicate > 0) {
+                  return stickerWidget;
+                }
+              }
+
+              return const SizedBox.shrink();
+ 
+
             },
           ),
         ],
