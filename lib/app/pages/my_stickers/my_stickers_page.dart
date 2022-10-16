@@ -1,4 +1,5 @@
 import 'package:appalbumcopa/app/pages/my_stickers/presenter/my_stieckers_presenter.dart';
+import 'package:appalbumcopa/app/pages/my_stickers/view/my_stickers_view_impl.dart';
 import 'package:appalbumcopa/app/pages/my_stickers/widgets/sticker_group.dart';
 import 'package:appalbumcopa/app/pages/my_stickers/widgets/sticker_group_filter.dart';
 
@@ -15,7 +16,7 @@ class MyStickersPage extends StatefulWidget {
   State<MyStickersPage> createState() => _MyStickersPageState();
 }
 
-class _MyStickersPageState extends State<MyStickersPage> {
+class _MyStickersPageState extends MyStickersViewImpl {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +27,21 @@ class _MyStickersPageState extends State<MyStickersPage> {
         slivers: [
           SliverToBoxAdapter(
             child: Column(
-              children: const [
+              children: [
                 StickerStatusFilter(
-                  filterSelected: '',
+                  filterSelected: statusFilter,
                 ),
-                StickerGroupFilter(),
+                const StickerGroupFilter(),
               ],
             ),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return const StickerGroup();
+                final group = album[index];
+                return StickerGroup(group: group);
               },
-              childCount: 1,
+              childCount: album.length,
             ),
           )
         ],

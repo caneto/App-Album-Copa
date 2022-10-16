@@ -19,7 +19,7 @@ class StickersRepositoryImpl implements StickersRepository {
   @override
   Future<List<GroupsStickers>> getMyAlbum() async {
     try {
-      final result = await dio.get('/api/countries');
+      final result = await dio.auth().get('/api/countries');
       return result.data
         .map<GroupsStickers>((g) => GroupsStickers.fromMap(g))
         .toList();

@@ -23,5 +23,10 @@ class MyStieckersPresenterImpl implements MyStieckersPresenter {
 
   @override
   set view(MyStickersView view) => _view = view;
+  
+  @override
+  Future<void> statusFilter(String status) async {
+    _view.updateStatusFilter(status);
+  }
 
 }

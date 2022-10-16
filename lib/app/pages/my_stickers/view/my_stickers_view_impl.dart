@@ -9,6 +9,16 @@ import './my_stickers_view.dart';
  abstract class MyStickersViewImpl extends State<MyStickersPage> with Messages<MyStickersPage>, Loader<MyStickersPage> implements MyStickersView {
 
   var album = <GroupsStickers>[];
+  var statusFilter = 'all';
+
+  @override
+  void initState() {
+    widget.presenter.view = this;  
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      widget.presenter.getMyAlbum();
+    });
+    super.initState();
+  }
 
   @override
   void error(String message) {
@@ -22,5 +32,11 @@ import './my_stickers_view.dart';
     });
   }
 
+  @override
+  void updateStatusFilter(status) {
+    setState(() {
+      statusFilter = status;
+    });
+  }
 
 }
