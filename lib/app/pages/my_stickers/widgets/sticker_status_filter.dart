@@ -12,7 +12,7 @@ class StickerStatusFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       width: MediaQuery.of(context).size.width,
       child: Wrap(
         spacing: 5,
