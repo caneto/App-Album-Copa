@@ -2,16 +2,21 @@ import 'package:appalbumcopa/app/core/ui/styles/button_styles.dart';
 import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
 import 'package:appalbumcopa/app/core/ui/widgets/button.dart';
 import 'package:appalbumcopa/app/core/ui/widgets/rounded_button.dart';
+import 'package:appalbumcopa/app/pages/sticker_detail/presenter/sticker_detail_presenter.dart';
+import 'package:appalbumcopa/app/pages/sticker_detail/view/sticker_detail_view_impl.dart';
 import 'package:flutter/material.dart';
 
 class StickerDetailPage extends StatefulWidget {
-  const StickerDetailPage({super.key});
+
+  final StickerDetailPresenter presenter;
+  
+  const StickerDetailPage({super.key, required this.presenter});
 
   @override
   State<StickerDetailPage> createState() => _StickerDetailPageState();
 }
 
-class _StickerDetailPageState extends State<StickerDetailPage> {
+class _StickerDetailPageState extends StickerDetailViewImpl {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +29,15 @@ class _StickerDetailPageState extends State<StickerDetailPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/images/sticker_pb.png'),
+              Image.asset(
+                 hasSticker ? 'assets/images/sticker.png' :
+                'assets/images/sticker_pb.png'),
               Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      'BRA 17',
+                      '$countryCode $stickerNumber',
                       style: context.textStyles.textPrimaryFontBold
                           .copyWith(fontSize: 22),
                     ),
@@ -40,7 +47,7 @@ class _StickerDetailPageState extends State<StickerDetailPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Text(
-                      '1',
+                      '$amount  ',
                       style: context.textStyles.textSecundaryFontMedium,
                     ),
                   ),
@@ -51,7 +58,7 @@ class _StickerDetailPageState extends State<StickerDetailPage> {
                 padding: const EdgeInsets.only(left: 15, bottom: 10),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Brasil',
+                  countryName,
                   style: context.textStyles.textPrimaryFontRegular,
                 ),
               ),
