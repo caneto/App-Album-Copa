@@ -22,13 +22,15 @@ abstract class StickerDetailViewImpl extends State<StickerDetailPage>
       showLoader();
       var arguments = ModalRoute.of(context)?.settings.arguments;
 
-      if(arguments != null) {
+      if(arguments != null && arguments is Map<String, dynamic>) {
         widget.presenter.load(
-          countryCode: countryCode,
-          stickerNumber: stickerNumber,
-          countryName: countryName,
+          countryCode: arguments['countryCode'], 
+          stickerNumber: arguments['stickerNumber'],
+          countryName: arguments['coutryName'],
+          stickerUser: arguments['stickerUser'],
         );
       } else {
+        hideLoader();
         Navigator.of(context).pop();
         showError('Não foi possivel carregar a figurinha');
       }
