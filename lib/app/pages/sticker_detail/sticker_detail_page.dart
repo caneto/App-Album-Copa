@@ -68,7 +68,7 @@ class _StickerDetailPageState extends StickerDetailViewImpl {
                 widht: MediaQuery.of(context).size.width * .9,
               ),
               Button(
-                onPressed: () {},
+                onPressed: widget.presenter.deleteSticker,
                 label: 'Excluir Figurinha',
                 outline: true,
                 style: context.buttonStyles.primaryOutlineButton,

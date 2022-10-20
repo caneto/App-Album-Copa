@@ -5,4 +5,6 @@ abstract class MyStieckersPresenter extends AppPresenter<MyStickersView> {
   Future<void> getMyAlbum();
   Future<void> statusFilter(String status);
   void countryFilter(List<String>? countries);
+
+  void refresh();
 }

@@ -14,5 +14,6 @@ abstract class StickerDetailPresenter extends AppPresenter<StickerDetailView> {
   decrementAmout();
 
   Future<void> saveSticker();
+  Future<void> deleteSticker();
 
 }
