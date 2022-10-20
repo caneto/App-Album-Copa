@@ -9,4 +9,10 @@ abstract class StickerDetailPresenter extends AppPresenter<StickerDetailView> {
     required String countryName,
     UserStickerModel? stickerUser,
   });
+
+  incrementAmout();
+  decrementAmout();
+
+  Future<void> saveSticker();
+
 }

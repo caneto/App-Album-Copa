@@ -6,4 +6,12 @@ abstract class StickerDetailView {
     String countryName,
     int amount,
   );
+
+  void updateAmout(int i);
+
+  void showLoader();
+
+  void saveSuccess();
+
+  void error(String message);
 }

@@ -26,7 +26,7 @@ abstract class StickerDetailViewImpl extends State<StickerDetailPage>
         widget.presenter.load(
           countryCode: arguments['countryCode'], 
           stickerNumber: arguments['stickerNumber'],
-          countryName: arguments['coutryName'],
+          countryName: arguments['countryName'],
           stickerUser: arguments['stickerUser'],
         );
       } else {
@@ -55,5 +55,24 @@ abstract class StickerDetailViewImpl extends State<StickerDetailPage>
       this.countryName = countryName;
       this.amount = amount;
     });
+  }
+
+  @override
+  void updateAmout(int amount) {
+    setState(() {
+      this.amount = amount;
+    });
+  }
+
+  @override
+  void saveSuccess() {
+    hideLoader();
+    Navigator.of(context).pop();    
+  }
+
+  @override
+  void error(String message) {
+    hideLoader();
+    showError(message);
   }
 }

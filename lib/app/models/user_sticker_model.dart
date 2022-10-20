@@ -24,7 +24,7 @@ class UserStickerModel {
       'id': id,
       'id_user': idUser,
       'id_sticker': idSticker,
-      'duplicate': duplicate,
+      'duplicate_stickers': duplicate,
       'sticker_code': stickerCode,
       'sttcker_number': sttckerNumber,
     };
@@ -35,7 +35,7 @@ class UserStickerModel {
       id: (map["id"] ?? 0) as int,
       idUser: (map["id_user"] ?? 0) as int,
       idSticker: (map["id_sticker"] ?? 0) as int,
-      duplicate: (map["duplicate"] ?? 0) as int,
+      duplicate: (map["duplicate_stickers"] ?? 0) as int,
       stickerCode: (map["sticker_code"] ?? '') as String,
       sttckerNumber: (map["sttcker_number"] ?? '') as String,
     );
