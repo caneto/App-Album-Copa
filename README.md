@@ -2,15 +2,17 @@
 
 App Album da Copa
 
-## Getting Started
+## Album da Copa do Mundo (2022) 
 
-This project is a starting point for a Flutter application.
+Feito na Evento DarkWeek - da Academia do Flutter
 
-A few resources to get you started if this is your first Flutter project:
+### (top_snackbar_flutter, loading_animation_widget, flutter_getit (do Rodrigo Rahman), flutter_dotenv, dio, validatorless, shared_preferences, flutter_awesome_select)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Usando arquitetura MVC, com BackEnd usando o Dio, e muito bom para aprender.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Este projeto foi criado pelo (Rodrigo Rahman)
+
+Se desejar ver fazer parte da Academia do Flutter. (Caso já estecha fechado, as vagas acabaram, aguarde)
+
+- [Instituto Academia do Flutter: ](http://academiadoflutter.com.br/)
+
