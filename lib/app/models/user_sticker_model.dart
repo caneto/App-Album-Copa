@@ -8,7 +8,7 @@ class UserStickerModel {
   final int idSticker;
   final int duplicate;
   final String stickerCode;
-  final String sttckerNumber;
+  final String stickerNumber;
   
   const UserStickerModel({
     required this.id,
@@ -16,7 +16,7 @@ class UserStickerModel {
     required this.idSticker,
     required this.duplicate,
     required this.stickerCode,
-    required this.sttckerNumber,
+    required this.stickerNumber,
   });
 
   Map<String, dynamic> toMap() {
@@ -26,7 +26,7 @@ class UserStickerModel {
       'id_sticker': idSticker,
       'duplicate_stickers': duplicate,
       'sticker_code': stickerCode,
-      'sttcker_number': sttckerNumber,
+      'sticker_number': stickerNumber,
     };
   }
 
@@ -37,7 +37,7 @@ class UserStickerModel {
       idSticker: (map["id_sticker"] ?? 0) as int,
       duplicate: (map["duplicate_stickers"] ?? 0) as int,
       stickerCode: (map["sticker_code"] ?? '') as String,
-      sttckerNumber: (map["sttcker_number"] ?? '') as String,
+      stickerNumber: (map["sticker_number"] ?? '') as String,
     );
   }
 

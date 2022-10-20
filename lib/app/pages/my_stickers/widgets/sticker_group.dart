@@ -2,7 +2,6 @@ import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
 import 'package:appalbumcopa/app/core/ui/styles/text_styles.dart';
 import 'package:appalbumcopa/app/models/groups_stickers.dart';
 import 'package:appalbumcopa/app/models/user_sticker_model.dart';
-import 'package:appalbumcopa/app/pages/my_stickers/my_stickers_page.dart';
 import 'package:appalbumcopa/app/pages/my_stickers/presenter/my_stieckers_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
@@ -56,7 +55,7 @@ class StickerGroup extends StatelessWidget {
             itemBuilder: (context, index) {
               final stickerNumber = '${group.stickersStart + index}';
               final stickerList = group.stickers
-                  .where((sticker) => sticker.sttckerNumber == stickerNumber);
+                  .where((sticker) => sticker.stickerNumber == stickerNumber);
               final sticker = stickerList.isNotEmpty ? stickerList.first : null;
               
               final stickerWidget = Sticker(
@@ -79,9 +78,7 @@ class StickerGroup extends StatelessWidget {
               }
 
               return const SizedBox.shrink();
- 
-
-            },
+             },
           ),
         ],
       ),
