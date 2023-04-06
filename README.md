@@ -52,7 +52,7 @@
 ---   
 
 <h2>🛠️ Funcionalidades e Tecnologias Estudadas</h2>
-
+<p>
 - Getit como Gerenciamento de Estado
 - Fluxo de Login e Logout com a aplicação
 - Navigator
