@@ -52,6 +52,7 @@
 ---   
 
 <h2>🛠️ Funcionalidades e Tecnologias Estudadas</h2>
+
 - Getit como Gerenciamento de Estado
 - Fluxo de Login e Logout com a aplicação
 - Navigator
@@ -66,7 +67,6 @@
   - My-Stickers (onde apresenta todos sos times e suas figurinhas)
   - Sticker-Detail (detalhe da página da figurinha, onde temos mais componentes descritivos a respeito da figurinha)
   E muuuitos outros aprendizados incríveis. 🔥
-
 
 ---
 
