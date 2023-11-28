@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, use_build_context_synchronously
 import 'package:appalbumcopa/app/core/ui/styles/colors_app.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -24,12 +24,11 @@ class GlobalContextImpl implements GlobalContext {
     final sp = await SharedPreferences.getInstance();
     sp.clear();
     showTopSnackBar(
-      navigatorKey.currentState!.context,
+      Overlay.of(navigatorKey.currentState!.context),
       CustomSnackBar.error(
         message: 'Login Expirado',
         backgroundColor: ColorsApp.instance.primary,
-      ),
-      overlayState: navigatorKey.currentState!.overlay,
+      ),      
     );
     navigatorKey.currentState!.pushNamedAndRemoveUntil('/auth/login', (route) => false);
   }

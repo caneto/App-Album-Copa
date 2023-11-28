@@ -21,7 +21,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final result = await dio.auth().get('/api/me');
       return UserModel.fromMap(result.data);
-    } on DioError catch (e,s) {
+    } on DioException catch (e,s) {
       log('Erro ao buscar dados do usuário logado', error: e, stackTrace: s);
       throw RepositoryException(message: 'Erro ao buscar dados do usuário logado');
     }

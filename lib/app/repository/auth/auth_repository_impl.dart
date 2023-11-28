@@ -30,7 +30,7 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       
       return accessToken;
-    } on DioError catch (e,s) {
+    } on DioException catch (e,s) {
       log('Erro ao realizar login', error: e, stackTrace: s);
       if(e.response?.statusCode == 401) {
         throw UnathorizedExeption();
@@ -49,7 +49,7 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<void> register(RegisterUserModel registerModel) async {
     try {
       await dio.unAuth().post('/api/register',data: registerModel.toMap());
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       log('Erro ao registrar usuário', error: e, stackTrace: s);
       throw RepositoryException(message: 'Erro ao registrar usuário');
     }

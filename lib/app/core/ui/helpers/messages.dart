@@ -6,7 +6,7 @@ import 'package:top_snackbar_flutter/top_snack_bar.dart';
 mixin Messages<T extends StatefulWidget> on State<T> {
   void showError(String message) {
     showTopSnackBar(
-      context,
+      Overlay.of(context),
       CustomSnackBar.error(
         message: message,
         backgroundColor: context.colors.primary,
@@ -16,7 +16,7 @@ mixin Messages<T extends StatefulWidget> on State<T> {
 
   void showInfo(String message) {
     showTopSnackBar(
-      context,
+      Overlay.of(context),
       CustomSnackBar.info(
         message: message,
       ),
@@ -25,7 +25,7 @@ mixin Messages<T extends StatefulWidget> on State<T> {
 
   void showSucess(String message) {
     showTopSnackBar(
-      context,
+      Overlay.of(context),
       CustomSnackBar.success(
         message: message,
       ),
